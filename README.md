@@ -184,37 +184,3 @@ for dept in deptdic.keys():
     sum_sal = sum(deptdic[dept])
     print '%s\t%s'% (dept,sum_sal)
 ```
-# 6. commond
-
-- cmd
-
-```
-jps
-
-hdfs dfs -mkdir /jp
-
-hdfs dfsadmin -safemode leave
-
-hdfs dfs -mkdir /jp
-
-hdfs dfs -1s /
-
-hdfs dfs-copyFromLocal/home/hduser/Documents/janavi/word.txt /jp
-
-hdfs dfs -1s /jp
-
-1s-1
-
-hadoop jar/home/hduser/Downloads/hadoop-streaming-2.7.3.jar \
-
--input/jp/word.txt \
-
--output/jp/jp123 \
-
--mapper /home/hduser/Documents/janavi/mapper.py \
-
--reducer /home/hduser/Documents/janavi/reducer.py
-
-hdfs dfs -cat /jp/jp123/part-00000
-
-```
