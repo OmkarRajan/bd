@@ -11,6 +11,8 @@ for line in sys.stdin:
         print '%s\t%s' % (word, 1)
 
 ```
+
+-reducer.py
 ```reducer.py
 #!/usr/bin/env python
 from operator import itemgetter
