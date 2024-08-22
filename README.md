@@ -50,6 +50,7 @@ if current_word == word:
 # 2. mapper.py
 
 ```py
+#!/usr/bin/env python
 import string
 import fileinput
 for line in fileinput.input():
@@ -62,6 +63,7 @@ for line in fileinput.input():
 # 2. reducer.py
 
 ```py
+#!/usr/bin/env python
 import fileinput
 transactions_count = 0
 sales_total = 0
