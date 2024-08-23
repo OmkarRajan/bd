@@ -206,7 +206,7 @@ for dept in deptdic.keys():
     sum_sal = sum(deptdic[dept])
     print '%s\t%s'% (dept,sum_sal)
 ```
-# 5. reducer.py
+# 5. salary.csv
 
 ```
 E001,sunita,account,15000
