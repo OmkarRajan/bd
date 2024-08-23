@@ -111,6 +111,17 @@ for gender in gender_age.keys():
     ave_age = sum(gender_age[gender])*1.0 / len(gender_age[gender])
     print '%s\t%s'% (gender, ave_age)
 ```
+# 3. age.csv
+
+```
+1,1,21,5.4,50
+2,2,22,5.5,53
+3,1,23,5.6,44
+4,2,24,5.7,59
+5,1,25,5.8,35
+6,1,30,5.9,60
+7,2,35,5.10,55
+```
 
 #
 # 4. TERMWORK4
@@ -147,8 +158,19 @@ for op in opiniondic.keys():
     count=len(opiniondic[op])
     print '%s\t%s'% (op,count)
 ```
+# 4. opinion.csv
 
+```
+1,M,25000,2,Agree
+2,F,50000,1,DisAgree
+3,M,75000,0,neutral
+4,F,85000,2,Agree
+5,M,35000,1,DisAgree
+6,F,95000,0,neutal
+7,M,45000,2,Agree
+```
 
+#
 # 5. TERMWORK5
 # 5. mapper.py
 
@@ -183,6 +205,17 @@ for line in sys.stdin:
 for dept in deptdic.keys():
     sum_sal = sum(deptdic[dept])
     print '%s\t%s'% (dept,sum_sal)
+```
+# 5. reducer.py
+
+```
+E001,sunita,account,15000
+E002,anil,it,50000
+E003,janavi,marketing,75000
+E004,suny,account,85000
+E005,sunita,it,95000
+E006,anita,marketing,55000
+E007,sunil,account,45000
 ```
 # 6. commond
 
