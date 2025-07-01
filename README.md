@@ -240,6 +240,80 @@ plt.show()
 
 ```
 
+# termwork 1
+```
+ jps
+cd Documents/
+sudo mkdir termwork1
+cd termwork1/
+sudo nano word.txt
+Deer Bear River
+car  car  River
+Deer car  Bear
+cat word.txt
+ ls
+sudo nano mapper.py
+#!/usr/bin/env python
+
+import sys
+
+for line in sys.stdin:
+    line = line.strip()
+    words = line.split()
+    
+    for word in words:
+        print('%s\t%s' % (word, 1))
+ cat mapper.py
+ls
+cat word.txt | python mapper.py
+sudo nano reducer.py
+#!/usr/bin/env python
+
+from operator import itemgetter
+import sys
+
+current_word = None
+current_count = 0
+word = None
+
+for line in sys.stdin:
+    line = line.strip()
+    word, count = line.split('\t', 1)
+    try:
+        count = int(count)
+    except ValueError:
+        continue
+
+    if current_word == word:
+        current_count += count
+    else:
+        if current_word:
+            print('%s\t%s' % (current_word, current_count))
+        current_count = count
+        current_word = word
+
+if current_word == word:
+    print('%s\t%s' % (current_word, current_count))
+ cat reducer.py
+ls
+cat word.txt | python mapper.py | sort –k1,1 | python reducer.py
+jps
+start-all.sh
+jps
+hdfs dfs -mkdir  /tw1
+hdfs dfs -ls /
+hdfs dfs –copyFromLocal/home/hduser/Documents/termwork1/word.txt /tw1
+hdfs dfs  -ls  /tw1
+sudo chmod 777 mapper.py reducer.py
+ls -1
+hadoop jar /home/hduser/Downloads/hadoop-streaming 2.7.3.jar \
+-input /tw1/word.txt \
+-output /tw1/8899 \
+-mapper /home/hduser/Documents/termwork1/mapper.py \
+-reducer /home/hduser/Documents/termwork1/reducer.py
+hdfs dfs –cat /tw1/8899/part-00000
+localhost:50070/
+
 
 
 
